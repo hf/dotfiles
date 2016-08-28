@@ -1,0 +1,2 @@
+:source $HOME/.vim/basic.vimrc
+:source $HOME/.vim/plugins.vimrc

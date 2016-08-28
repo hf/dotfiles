@@ -1,3 +1,0 @@
-These are my dotfiles.
-
-They use a Rakefile to create symlinks to files and directories found in this folder.
