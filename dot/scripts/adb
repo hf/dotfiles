@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$HOME/Apps/android-sdk-linux/platform-tools/adb $@

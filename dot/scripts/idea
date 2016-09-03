@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$HOME/Apps/idea-IC/bin/idea.sh $@
