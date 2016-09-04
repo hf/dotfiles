@@ -1,1 +1,3 @@
-:source $HOME/.vim/basic.vimrc
+:source ~/.vim/basic.vimrc
+
+:set surround
