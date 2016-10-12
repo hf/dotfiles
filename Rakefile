@@ -1,3 +1,5 @@
+require "./setup/android"
+
 HOME = ENV['HOME']
 DOTFILES = File.dirname(__FILE__)
 
