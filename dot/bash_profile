@@ -10,12 +10,7 @@ fi
 EDITOR=vim
 export EDITOR
 
-PATHCONF='$PATH'
-
-for pathfile in $HOME/.path.d/*.path;
+for envfile in $HOME/.env.d/*.env;
 do
-  PATHCONF=$PATHCONF:`/bin/cat $pathfile`
+  source "$envfile"
 done
-
-PATH=`eval "echo $PATHCONF"`
-export PATH
