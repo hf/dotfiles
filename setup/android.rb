@@ -22,7 +22,8 @@ APPS_ANDROID_NDK = "#{APPS_ANDROID}/ndk"
 namespace :setup do
 
 def download file, from, to
-  sh 'wget', '-O', to, "#{from}/#{file}"
+  sh 'wget', '-c', '-O', "#{to}.part", "#{from}/#{file}"
+  mv "#{to}.part", to
 end
 
 def directories file
@@ -111,9 +112,37 @@ def update_path name, path, local = true
   puts "update_path #{pathfile}\n #{path}"
 end
 
+def update_env env, source, local = true
+  files = FileList["#{ENV['HOME']}/.env.d/*.env"].sort
+  names = files.map {|f| /^[0-9]+-([a-z0-9\-_]+)\..*/i.match(File.basename(f))[1] }
+
+  return if names.index env
+  
+  last = files.last
+  last_id = File.basename(last).split('-').first.to_i
+  new_id = last_id + 1
+
+  envfile = "#{File.dirname(last)}/#{new_id.to_s.rjust(2, '0')}-#{env}#{local ? '.local' : ''}.env"
+
+  File.open envfile, 'w+' do |f|
+    f.write "export #{env}=\"#{source}\""
+  end
+  
+  puts "update_env #{envfile}\n #{env}=\"#{source}\""
+end
+
 desc "Setup Android SDK and NDK in $HOME/Apps for Linux."
 task :android => [APPS_ANDROID_SDK, APPS_ANDROID_NDK] do
   update_path "android", "$HOME/Apps/Android/sdk/tools:$HOME/Apps/Android/sdk/platform-tools:$HOME/Apps/Android/ndk"
+  update_env "ANDROID_HOME", "$HOME/Apps/Android/sdk"
+  update_env "NDK_BUILD", "$HOME/Apps/Android/ndk"
+
+  puts "Android SDK and NDK have been set up."
+  puts "The SDK location is at: #{APPS_ANDROID_SDK}"
+  puts "The NDK location is at: #{APPS_ANDROID_NDK}"
+  puts 
+  puts "Run `source .bash_profile` to update PATH, ANDROID_HOME and NDK_BUILD."
+  puts "You may also wish to update the sdk by running `android update sdk --no-ui`"
 end
 
 end
