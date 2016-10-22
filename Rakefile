@@ -1,4 +1,5 @@
 require "./setup/android"
+require "./setup/sbt"
 
 HOME = ENV['HOME']
 DOTFILES = File.dirname(__FILE__)

@@ -1,6 +1,6 @@
+require "#{File.dirname __FILE__}/tools.rb"
 require 'open3'
 
-APPS = "#{ENV['HOME']}/Apps"
 APPS_ANDROID = "#{APPS}/Android"
 
 ANDROID_SDK_REMOTE = 'https://dl.google.com/android/'
@@ -20,43 +20,6 @@ APPS_ANDROID_SDK = "#{APPS_ANDROID}/sdk"
 APPS_ANDROID_NDK = "#{APPS_ANDROID}/ndk"
 
 namespace :setup do
-
-def download file, from, to
-  sh 'wget', '-c', '-O', "#{to}.part", "#{from}/#{file}"
-  mv "#{to}.part", to
-end
-
-def directories file
-  dirname = File.dirname(file)
-
-  if not File.exist? dirname
-    sh 'mkdir', '-p', File.dirname(file)
-  end
-end
-
-def extract file, where
-  extname = File.extname(file)
-
-  if ".zip" == extname
-    unzip file, where
-  elsif ".tgz" == extname
-    untar file, where
-  else
-    raise "Don't know how to extract files with extension #{extname}; at '#{file}'"
-  end
-end
-
-def unzip file, where
-  sh 'unzip', file, '-d', where
-end
-
-def untar file, where
-  sh 'tar', '-C', where, '-xf', file
-end
-
-def symlink target, name
-  sh 'ln', '-sb', target, name
-end
 
 file APPS_ANDROID_SDK_AR do |f|
   directories f.name
@@ -92,44 +55,6 @@ file APPS_ANDROID_NDK => APPS_ANDROID_NDK_AR_EXTRACTED do |f|
   symlink APPS_ANDROID_NDK_AR_EXTRACTED, APPS_ANDROID_NDK
 end
 
-def update_path name, path, local = true
-  files = FileList["#{ENV['HOME']}/.path.d/*.path"].sort
-  names = files.map {|f| /^[0-9]+-([a-z0-9\-_]+)\..*/i.match(File.basename(f))[1] }
-  
-  return if names.index name
-
-  last = files.last
-
-  last_id = File.basename(last).split('-').first.to_i
-  new_id = last_id + 1
-
-  pathfile = "#{File.dirname(last)}/#{new_id.to_s.rjust(2, '0')}-#{name}#{local ? '.local' : ''}.path"
-
-  File.open pathfile, 'w+' do |f|
-    f.write path
-  end
-  
-  puts "update_path #{pathfile}\n #{path}"
-end
-
-def update_env env, source, local = true
-  files = FileList["#{ENV['HOME']}/.env.d/*.env"].sort
-  names = files.map {|f| /^[0-9]+-([a-z0-9\-_]+)\..*/i.match(File.basename(f))[1] }
-
-  return if names.index env
-  
-  last = files.last
-  last_id = File.basename(last).split('-').first.to_i
-  new_id = last_id + 1
-
-  envfile = "#{File.dirname(last)}/#{new_id.to_s.rjust(2, '0')}-#{env}#{local ? '.local' : ''}.env"
-
-  File.open envfile, 'w+' do |f|
-    f.write "export #{env}=\"#{source}\""
-  end
-  
-  puts "update_env #{envfile}\n #{env}=\"#{source}\""
-end
 
 desc "Setup Android SDK and NDK in $HOME/Apps for Linux."
 task :android => [APPS_ANDROID_SDK, APPS_ANDROID_NDK] do
