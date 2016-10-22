@@ -7,3 +7,6 @@
 [submodule "dot/vim/bundle/vim-fugitive"]
 	path = dot/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dot/vim/bundle/vim-scala"]
+	path = dot/vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
