@@ -10,3 +10,6 @@
 [submodule "dot/vim/bundle/vim-scala"]
 	path = dot/vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "dot/vim/bundle/kotlin-vim"]
+	path = dot/vim/bundle/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim.git
