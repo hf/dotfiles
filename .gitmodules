@@ -13,3 +13,6 @@
 [submodule "dot/vim/bundle/kotlin-vim"]
 	path = dot/vim/bundle/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim.git
+[submodule "dot/vim/bundle/syntastic"]
+	path = dot/vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
