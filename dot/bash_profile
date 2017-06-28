@@ -7,9 +7,6 @@ fi
 
 # User specific environment and startup programs
 
-EDITOR=vim
-export EDITOR
-
 for envfile in $HOME/.env.d/*.env;
 do
   source "$envfile"
