@@ -19,3 +19,6 @@
 [submodule "dot/vim/bundle/ctrlp"]
 	path = dot/vim/bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "dot/vim/bundle/typescript-vim"]
+	path = dot/vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
