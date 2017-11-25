@@ -22,3 +22,12 @@
 [submodule "dot/vim/bundle/typescript-vim"]
 	path = dot/vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "dot/vim/bundle/vim-js-pretty-template"]
+	path = dot/vim/bundle/vim-js-pretty-template
+	url = https://github.com/Quramy/vim-js-pretty-template.git
+[submodule "dot/vim/bundle/vim-prettier"]
+	path = dot/vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git
+[submodule "dot/vim/bundle/neoformat"]
+	path = dot/vim/bundle/neoformat
+	url = https://github.com/sbdchd/neoformat.git

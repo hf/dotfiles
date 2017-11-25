@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+let mapleader = "-"
+
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -17,3 +19,9 @@ let g:syntastic_javascript_checkers = [ "eslint", "jshint" ]
 let g:syntastic_typescript_checkers = [ "tsuquyomi" ]
 
 let g:tsuquyomi_disable_quickfix = 1
+
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+
+
