@@ -12,4 +12,6 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 
 Plug 'Quramy/tsuquyomi'
 
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()
