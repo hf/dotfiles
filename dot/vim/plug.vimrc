@@ -10,8 +10,14 @@ Plug 'vim-syntastic/syntastic'
 
 Plug 'Shougo/vimproc', { 'do': 'make' }
 
-Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 
 Plug 'editorconfig/editorconfig-vim'
+
+Plug 'rust-lang/rust.vim'
+
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': ['rust', 'javascript'] }
 
 call plug#end()

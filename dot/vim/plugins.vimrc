@@ -22,4 +22,8 @@ set ballooneval
 autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
-
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+  \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+  \ 'javascript': ['language-server']
+  \ }
