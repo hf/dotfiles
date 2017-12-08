@@ -1,0 +1,1 @@
+/home/vuk/dotfiles/dot/env.d

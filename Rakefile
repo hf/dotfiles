@@ -5,6 +5,9 @@ HOME = ENV['HOME']
 DOTFILES = File.dirname(__FILE__)
 
 DOTS = FileList["dot/*"]
+CONFIGS = FileList["config/*"].map do |f|
+  "#{HOME}/.config/#{File.basename(f)}"
+end
 
 def dotname(f)
   "#{HOME}/.#{File.basename(f)}"
@@ -16,8 +19,14 @@ DOTS.each do |f|
   end
 end
 
-desc "Syncrhonize all files from dot/<name> into $HOME/.<name>"
-task :sync => DOTS.map {|f| dotname(f)}
+CONFIGS.each do |f|
+  file f do |t|
+    sh "ln", "-sb", "#{DOTFILES}/config/#{File.basename(f)}", t.name
+  end
+end
+
+desc "Syncrhonize all files from dot/<name>, config/<name> into $HOME/.<name>, $HOME/.config/<name>"
+task :sync => DOTS.map {|f| dotname(f)} + CONFIGS
 
 desc "Import $HOME/.<name> into dot/<name>"
 task :import, [:name] do |t, args|

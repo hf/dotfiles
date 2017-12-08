@@ -20,4 +20,10 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': ['rust', 'javascript'] }
 
+if has('nvim')
+else
+  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'roxma/nvim-yarp'
+endif
+
 call plug#end()
