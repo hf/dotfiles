@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 let mapleader = "-"
 
 autocmd vimenter * NERDTree

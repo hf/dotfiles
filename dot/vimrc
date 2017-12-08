@@ -1,3 +1,5 @@
+:source $HOME/.vim/plug.vimrc
+
 :source $HOME/.vim/basic.vimrc
 :source $HOME/.vim/macedonian.vimrc
 :source $HOME/.vim/plugins.vimrc

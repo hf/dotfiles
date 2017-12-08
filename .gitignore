@@ -1,2 +1,4 @@
 dot/path.d/*.local.path
 dot/env.d/*.local.env
+
+dot/vim/plugged
