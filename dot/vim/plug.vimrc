@@ -18,7 +18,11 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'rust-lang/rust.vim'
 
+Plug 'udalov/kotlin-vim'
+
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': ['rust', 'javascript'] }
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 if has('nvim')
 else
