@@ -2,8 +2,6 @@ call plug#begin()
 
 Plug 'tpope/vim-surround'
 
-Plug 'sbdchd/neoformat'
-
 Plug 'scrooloose/nerdtree'
 
 Plug 'vim-syntastic/syntastic'
@@ -20,7 +18,10 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'udalov/kotlin-vim'
 
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': ['rust', 'javascript'] }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 

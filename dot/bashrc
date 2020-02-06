@@ -24,3 +24,5 @@ PS1='\u@\h \W$(__git_ps1 " (%s)")\n  > '
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

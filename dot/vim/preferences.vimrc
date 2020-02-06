@@ -12,7 +12,7 @@ set softtabstop=2
 set expandtab
 set relativenumber
 
-colorscheme industry
+colorscheme slate
 
 set exrc
 set secure
