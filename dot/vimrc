@@ -1,7 +1,4 @@
-:source $HOME/.vim/plug.vimrc
-
 :source $HOME/.vim/basic.vimrc
-:source $HOME/.vim/macedonian.vimrc
-:source $HOME/.vim/plugins.vimrc
 :source $HOME/.vim/preferences.vimrc
-:source $HOME/.vim/gui.vimrc
+:source $HOME/.vim/macedonian.vimrc
+:source $HOME/.vim/plug.vimrc

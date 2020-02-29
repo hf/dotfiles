@@ -1,1 +1,0 @@
-/home/vuk/dotfiles/dot/path.d
