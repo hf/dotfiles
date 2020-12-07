@@ -46,3 +46,9 @@ if [ -f ~/.nvm/bash_completion ]
 then
         source ~/.nvm/bash_completion
 fi
+
+if [ "Darwin" == `uname` ]
+then
+        source /usr/local/etc/bash_completion.d/git-completion.bash
+        source /usr/local/etc/bash_completion.d/brew
+fi
