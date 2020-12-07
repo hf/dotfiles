@@ -15,4 +15,4 @@ else
 	PS1='\u@\h \W\n  > '
 fi
 
-export PATH="./node_modules/.bin:$PATH:$HOME/.yarn/bin:$HOME/.npm/bin:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.go/bin:$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.npm/bin:$HOME/.rvm/bin:$HOME/.local/bin"

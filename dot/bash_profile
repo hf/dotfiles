@@ -1,4 +1,48 @@
+which vimx 1>>/dev/null 2>>/dev/null
+if [ 0 == $? ]
+then
+        alias vim=vimx
+        export EDITOR=vimx
+else
+        which vim 1>>/dev/null 2>>/dev/null
+        if [ 0 == $? ]
+        then
+                export EDITOR=vim
+        fi
+fi
+
 if [ -f ~/.bashrc ]
 then
         source ~/.bashrc
+fi
+
+if [ -f ~/.rvm/scripts/rvm ]
+then
+        source ~/.rvm/scripts/rvm
+fi
+
+if [ -f ~/.python3/bin/activate ]
+then
+        VIRTUAL_ENV_DISABLE_PROMPT=yes
+        source ~/.python3/bin/activate
+fi
+
+if [ -d ~/.go ]
+then
+        export GOPATH=$HOME/.go
+fi
+
+if [ -f ~/.cargo/env ]
+then
+        source ~/.cargo/env
+fi
+
+if [ -f ~/.nvm/nvm.sh ]
+then
+        source ~/.nvm/nvm.sh
+fi
+
+if [ -f ~/.nvm/bash_completion ]
+then
+        source ~/.nvm/bash_completion
 fi

@@ -8,7 +8,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'dense-analysis/ale'
 Plug 'autozimu/LanguageClient-neovim', { 'branch':'next', 'do': 'make release' }
 
 call plug#end()

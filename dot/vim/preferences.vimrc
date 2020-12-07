@@ -10,6 +10,8 @@ set showbreak=↯\
 set list
 set listchars=tab:……,eol:↼,nbsp:␣,trail:∘,extends:⟩,precedes:⟨
 
+set noswapfile
+
 let mapleader = '-'
 
 autocmd StdinReadPre * let s:std_in=1
