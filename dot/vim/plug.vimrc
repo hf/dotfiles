@@ -10,4 +10,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'autozimu/LanguageClient-neovim', { 'branch':'next', 'do': 'make release' }
 
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
