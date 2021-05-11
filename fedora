@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -x
+
+sudo bash <<EOF
+set -x
+
+dnf -y groupinstall 'C Development Tools and Libraries'
+dnf -y install \
+        vim
+EOF
+

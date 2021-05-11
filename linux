@@ -1,0 +1,42 @@
+#!/bin/bash
+
+set -x
+
+mkdir -p "$HOME/.local"
+
+if [ -d "$HOME/.python3" ]
+then
+        echo "Python 3 virtualenv in ~/.python3"
+else
+        python3 -m venv ~/.python3
+fi
+
+if [ -d "$HOME/.rvm" ]
+then
+        echo "Will not install RVM, already installed."
+else
+        gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+        curl -sSL https://get.rvm.io | bash -s stable
+fi
+
+if [ -d "$HOME/.cargo" ]
+then
+        echo "Will not install rustup, already installed."
+else
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
+if [ -d "$HOME/.nvm" ]
+then
+        echo "Will not install NVM, already installed."
+else
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+fi
+
+if [ -d "$HOME/.local/go" ]
+then
+        echo "Will not install Go, already installed."
+else
+        curl https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz | tar -zx -C "$HOME/.local"
+        go version
+fi
