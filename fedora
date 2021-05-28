@@ -10,6 +10,12 @@ dnf -y install \
         vim \
         vim-X11 \
         ddccontrol \
-        ddcutil
+        ddcutil \
+        wireguard-tools \
+        libsecret \
+        libsecret-devel \
+        git-credential-libsecret
 EOF
+
+git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 

@@ -40,3 +40,23 @@ else
         curl https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz | tar -zx -C "$HOME/.local"
         go version
 fi
+
+curl -o ~/.local/aws-vault --location "https://github.com/99designs/aws-vault/releases/download/v6.3.1/aws-vault-linux-amd64"
+chmod +x ~/.local/aws-vault
+
+curl -o /tmp/eksctl.tar.gz --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz"
+tar -xzf /tmp/eksctl.tar.gz -C "$HOME/.local/bin"
+chmod +x ~/.local/bin/eksctl
+
+curl -o ~/.local/bin/aws-kubectl-1.18 https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/kubectl
+chmod +x ~/.local/bin/aws-kubectl-1.18
+
+curl -o ~/.local/bin/aws-kubectl-1.19 https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2020-11-02/bin/linux/amd64/kubectl
+chmod +x ~/.local/bin/aws-kubectl-1.19
+
+curl -o ~/.local/bin/aws-kubectl-1.20 https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2020-11-02/bin/linux/amd64/kubectl
+chmod +x ~/.local/bin/aws-kubectl-1.20
+
+curl -o ~/.local/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
+chmod +x ~/.local/bin/aws-iam-authenticator
+
