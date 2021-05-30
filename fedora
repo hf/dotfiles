@@ -14,7 +14,8 @@ dnf -y install \
         wireguard-tools \
         libsecret \
         libsecret-devel \
-        git-credential-libsecret
+        git-credential-libsecret \
+        xclip
 EOF
 
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
