@@ -1,4 +1,5 @@
 *~
+*.DS_Store
 
 dot/path.d/*.local.path
 dot/env.d/*.local.env

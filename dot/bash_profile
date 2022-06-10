@@ -54,6 +54,7 @@ fi
 
 if [ "Darwin" == `uname` ]
 then
-        source /usr/local/etc/bash_completion.d/git-completion.bash
-        source /usr/local/etc/bash_completion.d/brew
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        alias vimx=vim
+        alias xdg-open=open
 fi
