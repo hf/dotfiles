@@ -8,8 +8,7 @@ Plug 'tpope/vim-surround'
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'autozimu/LanguageClient-neovim', { 'branch':'next', 'do': 'make release' }
-
-Plug 'leafgarland/typescript-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
