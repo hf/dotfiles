@@ -29,4 +29,5 @@ augroup END
 
 noremap <c-k> :NERDTreeFind<CR>
 noremap <c-a> :Ag<CR>
+noremap <c-f> :FZF<CR>
 
