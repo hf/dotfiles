@@ -3,8 +3,6 @@ HOME = ENV['HOME']
 DOTS = FileList["dot/*"] - FileList["dot/config"]
 CONFIG_DOTS = FileList["dot/config/*"]
 
-puts CONFIG_DOTS
-
 def linked dot
   File.expand_path File.join(HOME, "." + dot)
 end
@@ -30,7 +28,7 @@ task :unlink do
   end
 
   CONFIG_DOTS.each do |dot|
-    l = linked dot
+    l = linked(dot.sub(%r{\A[^/]+/}, ""))
     sh "unlink", l if File.exist? l
   end
 end
