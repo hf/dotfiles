@@ -11,4 +11,11 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'elixir-editors/vim-elixir'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 call plug#end()

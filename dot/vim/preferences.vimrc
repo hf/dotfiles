@@ -12,6 +12,9 @@ set listchars=tab:……,eol:↼,nbsp:␣,trail:∘,extends:⟩,precedes:⟨
 
 set noswapfile
 
+set textwidth=0
+set formatoptions-=t
+
 let mapleader = '-'
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['^\.git$']
@@ -24,10 +27,10 @@ let g:ale_linters = {}
 
 augroup Text
         autocmd!
-        autocmd FileType markdown :set tw=79
 augroup END
 
 noremap <c-k> :NERDTreeFind<CR>
 noremap <c-a> :Ag<CR>
 noremap <c-f> :FZF<CR>
 
+let $FZF_DEFAULT_COMMAND="ag --no-break --nocolor --noheading --hidden --ignore node_modules --ignore dist --ignore out --ignore .git -g ''"
