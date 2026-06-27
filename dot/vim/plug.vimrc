@@ -18,4 +18,6 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+Plug 'hf/vim-typespec'
+
 call plug#end()
