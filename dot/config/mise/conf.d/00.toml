@@ -1,2 +1,10 @@
 [tools]
-node = '24'
+go = "1.25"
+kubectl = "latest"
+neovim = "stable"
+node = "24"
+pnpm = "latest"
+python = "3.14"
+ruby = "4.0"
+rust = "stable"
+
