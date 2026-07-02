@@ -1,6 +1,7 @@
 adjust-cell-height=42%
 font-size=14
-font-family="Fira Code"
+font-family="Reddit Mono"
+font-variation = "wght=500"
 
 theme="Builtin Pastel Dark"
 background-opacity=0.9

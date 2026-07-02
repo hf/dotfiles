@@ -30,7 +30,7 @@ augroup Text
 augroup END
 
 noremap <c-k> :NERDTreeFind<CR>
-noremap <c-a> :Ag<CR>
+noremap <c-a> :Rg<CR>
 noremap <c-f> :FZF<CR>
 
-let $FZF_DEFAULT_COMMAND="ag --no-break --nocolor --noheading --hidden --ignore node_modules --ignore dist --ignore out --ignore .git -g ''"
+let $FZF_DEFAULT_COMMAND="rg --files --hidden -g '!node_modules/**' -g '!dist/**' -g '!out/**' -g '!.git/**'"
